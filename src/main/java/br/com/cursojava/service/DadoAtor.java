@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarregaAtor extends CarregaArquivo {
+public class DadoAtor extends CarregaArquivo {
     private final String CAMINHO_ARQUIVO = "src\\main\\resources\\atores.csv";
 
     private List<Ator> atores;
 
-    public CarregaAtor(){
+    public DadoAtor() {
         atores = new ArrayList<>();
         lerDadosArquivo();
     }

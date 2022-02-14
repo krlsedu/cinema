@@ -1,14 +1,13 @@
 package br.com.cursojava;
 
-import br.com.cursojava.service.CarregaAtor;
-import br.com.cursojava.service.CarregaGenero;
-import br.com.cursojava.service.DadoSala;
+import br.com.cursojava.service.*;
 
 public class Cinema {
     public static void main(String[] args) {
-        var dadosAtor = new CarregaAtor();
-        var dadoGenero = new CarregaGenero();
+        var dadosAtor = new DadoAtor();
+        var dadoGenero = new DadoGenero();
         var dadosSala = new DadoSala();
-
+        var dadoFilme = new DadoFilme(dadosAtor, dadoGenero);
+        var dadoSessao = new DadoSessao(dadoFilme, dadosSala);
     }
 }

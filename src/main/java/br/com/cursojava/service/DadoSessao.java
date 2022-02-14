@@ -8,14 +8,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarregaSessao extends CarregaArquivo{
+public class DadoSessao extends CarregaArquivo {
     private final String CAMINHO_ARQUIVO = "src\\main\\resources\\sessoes.csv";
 
     private final List<Sessao> sessoes;
     private final DadoFilme dadoFilme;
     private final DadoSala dadoSala;
 
-    public CarregaSessao(DadoFilme dadoFilme, DadoSala dadoSala) {
+    public DadoSessao(DadoFilme dadoFilme, DadoSala dadoSala) {
         this.dadoFilme = dadoFilme;
         this.dadoSala = dadoSala;
         sessoes = new ArrayList<>();

@@ -6,12 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarregaGenero extends CarregaArquivo {
+public class DadoGenero extends CarregaArquivo {
     private final String CAMINHO_ARQUIVO = "src\\main\\resources\\generos.csv";
 
     private List<Genero> generos;
 
-    public CarregaGenero() {
+    public DadoGenero() {
         generos = new ArrayList<>();
         lerDadosArquivo();
     }

@@ -11,11 +11,11 @@ public class DadoFilme extends CarregaArquivo {
     private final String CAMINHO_ARQUIVO_ATORES = "src\\main\\resources\\filmesAtores.csv";
 
     private List<Filme> filmes;
-    private CarregaGenero dadosGeneros;
-    private CarregaAtor carregaAtor;
+    private DadoGenero dadosGeneros;
+    private DadoAtor dadoAtor;
 
-    public DadoFilme(CarregaAtor carregaAtor, CarregaGenero dadosGeneros) {
-        this.carregaAtor = carregaAtor;
+    public DadoFilme(DadoAtor dadoAtor, DadoGenero dadosGeneros) {
+        this.dadoAtor = dadoAtor;
         this.dadosGeneros = dadosGeneros;
         filmes = new ArrayList<>();
         lerDadosArquivo();
@@ -53,7 +53,7 @@ public class DadoFilme extends CarregaArquivo {
                 try {
                     String[] linhaSplit = linha.split(",");
                     if (linhaSplit[0].equalsIgnoreCase(filme.getTitulo())) {
-                        filme.getAtores().add(carregaAtor.getAtorPorNome(linhaSplit[1]));
+                        filme.getAtores().add(dadoAtor.getAtorPorNome(linhaSplit[1]));
                     }
                 } catch (Exception e) {
                     System.out.printf("Não foi possivel converter a linha %s para um ator do filme\n", linha);
@@ -62,7 +62,6 @@ public class DadoFilme extends CarregaArquivo {
         } catch (IOException e) {
             System.out.println("Houve um erro ao ler o arquivo");
         }
-        System.out.println(filmes);
     }
 
     public Filme getFilmePorTitulo(String titulo) {
