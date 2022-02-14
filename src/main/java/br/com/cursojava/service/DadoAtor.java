@@ -17,11 +17,12 @@ public class DadoAtor extends CarregaArquivo {
         lerDadosArquivo();
     }
 
+    @Override
     public void lerDadosArquivo() {
         try {
             List<String> linhasArquivo = getLinhas(CAMINHO_ARQUIVO);
 
-            for (int i = 0;  i < linhasArquivo.size(); i++) {
+            for (int i = 0; i < linhasArquivo.size(); i++) {
 
                 String linha = linhasArquivo.get(i);
 
@@ -56,7 +57,7 @@ public class DadoAtor extends CarregaArquivo {
 
     public Ator getAtorPorNome(String nome) {
         for (Ator ator : atores) {
-            if (ator.getNome().equals(nome)) {
+            if (ator.getNome().equalsIgnoreCase(nome)) {
                 return ator;
             }
         }

@@ -66,7 +66,7 @@ public class DadoFilme extends CarregaArquivo {
 
     public Filme getFilmePorTitulo(String titulo) {
         for (Filme filme : filmes) {
-            if (filme.getTitulo().equals(titulo)) {
+            if (filme.getTitulo().equalsIgnoreCase(titulo)) {
                 return filme;
             }
         }

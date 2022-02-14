@@ -40,7 +40,7 @@ public class DadoGenero extends CarregaArquivo {
 
     public Genero getGeneroPorDescricao(String descricao) {
         for (Genero genero : generos) {
-            if (genero.getDescricao().equals(descricao)) {
+            if (genero.getDescricao().equalsIgnoreCase(descricao)) {
                 return genero;
             }
         }
