@@ -36,7 +36,6 @@ public class DadoSala extends CarregaArquivo {
         } catch (IOException e) {
             System.out.println("Houve um erro ao ler o arquivo");
         }
-        System.out.println(salas);
     }
 
     public Sala getSalaPorNumero(Integer numero) {

@@ -42,7 +42,6 @@ public class DadoFilme extends CarregaArquivo {
         } catch (IOException e) {
             System.out.println("Houve um erro ao ler o arquivo");
         }
-        System.out.println(filmes);
     }
 
     public void lerDadosArquivoAtroes(Filme filme) {

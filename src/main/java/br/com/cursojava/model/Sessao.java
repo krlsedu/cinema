@@ -14,6 +14,12 @@ public class Sessao {
     private Boolean aberta;
     private TipoSessao tipoSessao;
 
+    private Integer ingressosVendidos;
+
+    public Sessao() {
+        ingressosVendidos = 0;
+    }
+
     public Integer getIdSessao() {
         return idSessao;
     }
@@ -76,6 +82,14 @@ public class Sessao {
 
     public void setTipoSessao(TipoSessao tipoSessao) {
         this.tipoSessao = tipoSessao;
+    }
+
+    public Integer getIngressosVendidos() {
+        return ingressosVendidos;
+    }
+
+    public void setIngressosVendidos(Integer ingressosVendidos) {
+        this.ingressosVendidos = ingressosVendidos;
     }
 
     @Override

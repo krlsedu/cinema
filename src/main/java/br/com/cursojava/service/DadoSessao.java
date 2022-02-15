@@ -42,7 +42,7 @@ public class DadoSessao extends CarregaArquivo {
                     sessao.setAberta("S".equals(linhaSplit[6]));
                     if ("3D".equals(linhaSplit[7])) {
                         sessao.setTipoSessao(TipoSessao.EM_3D);
-                    }else {
+                    } else {
                         sessao.setTipoSessao(TipoSessao.EM_2D);
                     }
                     sessoes.add(sessao);
@@ -53,6 +53,24 @@ public class DadoSessao extends CarregaArquivo {
         } catch (IOException e) {
             System.out.println("Houve um erro ao ler o arquivo");
         }
-        System.out.println(sessoes);
+    }
+
+    public Sessao getSessaoPorId(Integer id) {
+        for (Sessao sessao : sessoes) {
+            if (sessao.getIdSessao().equals(id)) {
+                return sessao;
+            }
+        }
+        return null;
+    }
+
+    public void printSessoes() {
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        for (Sessao sessao : sessoes) {
+            System.out.printf("%d - Filme: %s\nDia: %s\nHorário: %dh\n", sessao.getIdSessao(),
+                    sessao.getFilme().getTitulo(),
+                    df.format(sessao.getDataSessao()),
+                    sessao.getHora());
+        }
     }
 }

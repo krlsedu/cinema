@@ -35,7 +35,6 @@ public class DadoGenero extends CarregaArquivo {
         } catch (IOException e) {
             System.out.println("Houve um erro ao ler o arquivo");
         }
-        System.out.println(generos);
     }
 
     public Genero getGeneroPorDescricao(String descricao) {

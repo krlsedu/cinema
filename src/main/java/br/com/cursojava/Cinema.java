@@ -9,5 +9,7 @@ public class Cinema {
         var dadosSala = new DadoSala();
         var dadosFilme = new DadoFilme(dadosAtor, dadosGenero);
         var dadosSessao = new DadoSessao(dadosFilme, dadosSala);
+        Menu menu = new Menu(dadosSessao);
+        menu.iniciaMenu();
     }
 }
