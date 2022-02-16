@@ -3,12 +3,12 @@ package br.com.cursojava.service;
 import java.util.Scanner;
 
 public class Menu {
-    private final VendaIngersso vendaIngersso;
+    private final VendaIngresso vendaIngresso;
     private final DadoSessao dadoSessao;
 
     public Menu(DadoSessao dadoSessao) {
         this.dadoSessao = dadoSessao;
-        this.vendaIngersso = new VendaIngersso(this.dadoSessao);
+        this.vendaIngresso = new VendaIngresso(this.dadoSessao);
     }
 
     public void iniciaMenu() {
@@ -20,13 +20,13 @@ public class Menu {
             int operacao = scanner.nextInt();
             switch (operacao) {
                 case 1:
-                    vendaIngersso.vende();
+                    vendaIngresso.vende();
                     break;
                 case 2:
                     dadoSessao.printSessoes();
                     break;
                 case 3:
-                    vendaIngersso.imprimeVendas();
+                    vendaIngresso.imprimeVendas();
                     break;
                 case 99:
                     continua = false;

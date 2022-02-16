@@ -14,6 +14,7 @@ public class DadoSessao extends CarregaArquivo {
     private final String CAMINHO_ARQUIVO = "src\\main\\resources\\sessoes.csv";
 
     private final List<Sessao> sessoes;
+
     private final DadoFilme dadoFilme;
     private final DadoSala dadoSala;
 
@@ -37,11 +38,15 @@ public class DadoSessao extends CarregaArquivo {
                     sessao.setIdSessao(Integer.parseInt(linhaSplit[0]));
                     sessao.setSala(dadoSala.getSalaPorNumero(Integer.parseInt(linhaSplit[1])));
                     sessao.setFilme(dadoFilme.getFilmePorTitulo(linhaSplit[2]));
+
                     SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                     sessao.setDataSessao(df.parse(linhaSplit[3]));
+
                     sessao.setHora(Integer.parseInt(linhaSplit[4]));
+
                     sessao.setValorIngresso(Double.parseDouble(linhaSplit[5]));
                     sessao.setAberta("S".equals(linhaSplit[6]));
+
                     if ("3D".equals(linhaSplit[7])) {
                         sessao.setTipoSessao(TipoSessao.EM_3D);
                     } else {

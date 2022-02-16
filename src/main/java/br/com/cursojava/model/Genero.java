@@ -1,7 +1,9 @@
 package br.com.cursojava.model;
 
 public class Genero {
+    private int id;
     private String descricao;
+    private int classificacaoEtaria;
 
     public String getDescricao() {
         return descricao;

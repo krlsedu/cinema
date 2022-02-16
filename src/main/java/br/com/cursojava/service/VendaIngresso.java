@@ -9,20 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class VendaIngersso {
+public class VendaIngresso {
     private final DadoSessao dadoSessao;
     private final List<Ingresso> ingressos;
 
-    public VendaIngersso(DadoSessao dadoSessao) {
+    public VendaIngresso(DadoSessao dadoSessao) {
         this.dadoSessao = dadoSessao;
         ingressos = new ArrayList<>();
     }
 
     public void vende() {
         System.out.println("Informe o código da sessão:");
+
         Scanner scanner = new Scanner(System.in);
         int idSessao = scanner.nextInt();
+
         Ingresso ingresso = new Ingresso();
+
         Sessao sessao = dadoSessao.getSessaoPorId(idSessao);
         if (sessao == null) {
             System.out.println("Sessão inválida");
@@ -32,8 +35,10 @@ public class VendaIngersso {
                 ingresso.setSessao(sessao);
 
                 System.out.println("Informe o tipo de Ingresso: N - normal, E - Estudante, S - Senior, P - Promocional");
+
                 scanner = new Scanner(System.in);
                 String opcao = scanner.nextLine();
+
                 switch (opcao.toUpperCase()) {
                     case "N":
                         ingresso.setTipoIngresso(TipoIngresso.NORMAL);

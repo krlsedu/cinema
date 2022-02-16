@@ -21,16 +21,10 @@ public class DadoGenero extends CarregaArquivo {
         try {
             List<String> linhasArquivo = getLinhas(CAMINHO_ARQUIVO);
 
-            for (int i = 0; i < linhasArquivo.size(); i++) {
-                String linha = linhasArquivo.get(i);
-                try {
-                    String[] linhaSplit = linha.split(",");
-                    var genero = new Genero();
-                    genero.setDescricao(linhaSplit[0]);
-                    generos.add(genero);
-                } catch (Exception e) {
-                    System.out.printf("Não foi possivel converter a linha %s para um genero\n", linha);
-                }
+            for (String linha : linhasArquivo) {
+                var genero = new Genero();
+                genero.setDescricao(linha);
+                generos.add(genero);
             }
         } catch (IOException e) {
             System.out.println("Houve um erro ao ler o arquivo");
